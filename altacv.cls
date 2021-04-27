@@ -124,6 +124,22 @@
   \smallskip
   \textbf{\color{accent}#2}\par
   \smallskip
+  {\small\makebox[0.5\linewidth][l]{\faMapMarker\hspace{0.5em}#4}%
+  {\makebox[0.5\linewidth][l]{\faCalendar \hspace{0.5em}#3}}\par}
+  \medskip
+}
+
+\newcommand{\cvsubevent}[2]{%
+  {\small\color{emphasis}\makebox[0.5\linewidth][l]{#1}%
+  {\makebox[0.5\linewidth][l]{\color{emphasis}\faCalendar\hspace{0.5em}#2}}\par}
+  \smallskip
+}
+
+\newcommand{\cveventinv}[4]{%
+  {\large\color{emphasis}#1\par}
+  \smallskip
+  \textbf{\color{accent}#2}\par
+  \smallskip
   {\small\makebox[0.5\linewidth][l]{\faCalendar \hspace{0.5em}#3}%
   \ifstrequal{#4}{}{}{\makebox[0.5\linewidth][l]{\faMapMarker\hspace{0.5em}#4}}\par}
   \medskip
