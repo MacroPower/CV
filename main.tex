@@ -2,45 +2,57 @@
 %%% CV Jacob Colvin 07/2022 %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\PassOptionsToPackage{dvipsnames}{xcolor}
-\documentclass[10pt,a4paper,hidelinks]{altacv}
+\documentclass[10pt,a4paper,ragged2e,withhyper,hidelinks]{altacv}
 
 %Layout
-\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm,footskip=2\baselineskip}
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
 
 %Packages
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[default]{lato}
-\usepackage{hyperref}
+\usepackage{paracol}
+\usepackage{gensymb}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Lato}
+\else
+  % If using pdflatex:
+  \usepackage[default]{lato}
+\fi
 
 %Colors
-\definecolor{accent}{HTML}{000e17}
-\definecolor{heading}{HTML}{000e17}
-\definecolor{emphasis}{HTML}{696969}
-\definecolor{body}{HTML}{01415f}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\definecolor{VividPurple}{HTML}{3E0097}
 
-\colorlet{heading}{heading}
-\colorlet{accent}{accent}
-\colorlet{emphasis}{emphasis}
-\colorlet{body}{body}
+\colorlet{name}{black}
+\colorlet{tagline}{VividPurple}
+\colorlet{heading}{VividPurple}
+\colorlet{headingrule}{VividPurple}
+\colorlet{subheading}{VividPurple}
+\colorlet{accent}{VividPurple}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
 
 \renewcommand{\itemmarker}{{\small\textbullet}}
 \renewcommand{\ratingmarker}{\faCircle}
 
 \newcommand{\cveventinv}[4]{%
-    {\large\color{emphasis}#1\par}
-    \smallskip
-    \textbf{\color{accent}#2}\par
-    \smallskip
-    {\small\makebox[0.5\linewidth][l]{\faMapMarker\hspace{0.5em}#4}%
-    {\makebox[0.5\linewidth][l]{\faCalendar \hspace{0.5em}#3}}\par}
-    \medskip
+  {\large\color{emphasis}#1\par}
+  \smallskip\normalsize
+  \ifstrequal{#2}{}{}{
+  \textbf{\color{accent}#2}\par
+  \smallskip}
+  \ifstrequal{#4}{}{}{{\small\color{emphasis}\makebox[0.5\linewidth][l]{\faMapMarker~#4}}}%
+  \ifstrequal{#3}{}{}{{\small\color{emphasis}\makebox[0.5\linewidth][l]{\faCalendar~#3}}}\par
+  \medskip\normalsize
 }
 
 \newcommand{\cvsubevent}[2]{%
-    {\small\color{emphasis}\makebox[0.5\linewidth][l]{#1}%
-    {\makebox[0.5\linewidth][l]{\color{emphasis}\faCalendar\hspace{0.5em}#2}}\par}
+    {\small\color{body}\makebox[0.5\linewidth][l]{#1}%
+    {\makebox[0.5\linewidth][l]{\color{body}\faCalendar\hspace{0.5em}#2}}\par}
     \smallskip
 }
 
@@ -56,23 +68,29 @@
 \name{Jacob Colvin}
 \tagline{Site Reliability Engineer}
 %\photo{2.5cm}{}
-\personalinfo{
-    \location{Cincinnati, Ohio}
-    \email{me@jacobcolvin.com}
-%    \mailaddress{}
-    \linkedin{\href{https://linkedin.com/in/colvinjm}{linkedin.com/in/colvinjm}}
-    \github{\href{https://github.com/MacroPower}{github.com/MacroPower}}
-    \homepage{\href{https://jacobcolvin.com}{jacobcolvin.com}}
-%    \twitter{@0xMacro}
+\personalinfo{%
+  \location{Cincinnati, Ohio}
+  \email{me@jacobcolvin.com}
+  \homepage{jacobcolvin.com}
+  \twitter{@0xMacro}
+  \linkedin{colvinjm}
+  \github{MacroPower}
 }
 
 \begin{fullwidth}
 \makecvheader
 \end{fullwidth}
 
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Experience %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\cvsection[page1sidebar]{Experience}
+\cvsection{Experience}
 
 \cveventinv{Senior Site Reliability Engineer}{84.51\degree / Kroger}{April 2021 -- Current}{Remote / Cincinnati, Ohio}
 
@@ -150,14 +168,122 @@
     \item   \small{Designed and documented optimal setup for PCF environments.}
 \end{itemize}
 
+\switchcolumn
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Soft-skills %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \cvsection{Soft-skills}
+
+% \cvtag{Flexibility}
+% \cvtag{Responsibility}
+% \cvtag{Multitasking}
+% \cvtag{Context switching}
+% \cvtag{Agile}
+% \cvtag{Teamwork}
+
+\cvsection{About}
+
+\small{I am passionate about open source, and thrive most when designing solutions for difficult problems. I am an avid homelabber, gamer, audiophile, and mechanical keyboard collector.}
+
+\medskip
+\smallskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Education %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cvsection{Education}
+
+\cvevent{B.S.\ Information Technology}{University of Cincinnati - CECH}{Aug 2015 -- April 2020}{}
+
+\begin{itemize}
+    \setlength{\itemindent}{0em}
+    \item   \small{Cybersecurity specialization}
+    \item   \small{Summa Cum Laude}
+\end{itemize}
+
+\medskip
+\smallskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Skills %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cvsection{Skills}
+
+\textcolor{emphasis}{Development:}\smallskip
+
+\cvtag{Go / Golang}
+\cvtag{Python}
+\cvtag{FastAPI}
+\par
+\cvtag{C\#}
+\cvtag{JavaScript}
+\cvtag{TypeScript}
+\cvtag{React}
+\par
+\cvtag{Jsonnet}
+
+\smallskip\divider
+
+\textcolor{emphasis}{Databases:}\smallskip
+
+\cvtag{MySQL}
+\cvtag{Oracle}
+\cvtag{Postgres}
+\par
+\cvtag{Timescale}
+
+\smallskip\divider
+
+\textcolor{emphasis}{Observability:}\smallskip
+
+\cvtag{Prometheus}
+\cvtag{Thanos}
+\cvtag{Grafana}
+\par
+\cvtag{Jaeger}
+\cvtag{Profiling - pprof}
+\cvtag{Fluent}
+\par
+\cvtag{Promscale}
+\cvtag{Telegraf}
+
+\smallskip\divider
+
+\textcolor{emphasis}{Operations:}\smallskip
+
+\cvtag{Docker}
+\cvtag{Kubernetes}
+\cvtag{Azure}
+\par
+\cvtag{Linux - Debian, Fedora}
+\cvtag{TeamCity}
+\par
+\cvtag{Pivotal Cloud Foundry}
+\cvtag{SonarQube}
+\par
+\cvtag{GitHub Actions}
+\cvtag{Databricks}
+
+\smallskip\divider
+
+\textcolor{emphasis}{Automation/Scripting:}\smallskip
+
+\cvtag{Ansible}
+\cvtag{Bash}
+\cvtag{PowerShell}
+\par
+\cvtag{Terraform}
+\cvtag{Make}
+
+\smallskip\divider
+
+\switchcolumn
 \newpage
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Projects %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\cvsection[page2sidebar]{Key Projects}
+\cvsection{Key Projects}
 
-\cvproject{OmegaGraf}{\href{https://jacobcolvin.com/OmegaGraf}{jacobcolvin.com/OmegaGraf}}{\faChain}
+\cvproject{OmegaGraf}{\href{https://jacobcolvin.com/OmegaGraf}{jacobcolvin.com/OmegaGraf}}{\faGlobe}
 
 \begin{itemize}
     \item   \small{An open-source project that seeks to completely automate vCenter monitoring, by orchestrating a small ecosystem of containers, including Telegraf, Prometheus, and Grafana.}
@@ -170,8 +296,8 @@
 \cvproject{Prometheus Video Renderer}{\href{https://github.com/MacroPower/prometheus\_video\_renderer}{MacroPower/prometheus\_video\_renderer}}{\faGithub}
 
 \begin{itemize}
-    \item   \small{Just for fun, completely impractical tool that allows you to encode media as Prometheus metrics.}
-    \item   \small{Featured on the Grafana blog:\par \url{https://grafana.com/blog/2021/07/30/how-to-use-grafana-and-prometheus-to-rickroll-your-friends-or-enemies}}
+    \item   \small{Just for fun, completely impractical tool that allows you to encode \par media as Prometheus metrics.}
+    \item   \small{Featured on the Grafana blog: \url{https://grafana.com/blog/2021/07/30/how-to-use-grafana-and-prometheus-to-rickroll-your-friends-or-enemies}}
     \item   \small{Technologies: Go, Jsonnet}
 \end{itemize}
 
@@ -180,7 +306,7 @@
 \cvproject{Analytics Panel Plugin}{\href{https://github.com/MacroPower/macropower-analytics-panel}{MacroPower/macropower-analytics-panel}}{\faGithub}
 
 \begin{itemize}
-    \item   \small{Grafana panel that injects JavaScript which reports user session information to a backend Go server, which exposes Prometheus metrics.}
+    \item   \small{Grafana panel that injects JavaScript which reports user session \par information to a backend Go server, which exposes Prometheus metrics.}
     \item   \small{Over 400k downloads, featured by Giant Swarm: \url{https://www.giantswarm.io/blog/grafana-ception-or-how-we-do-grafana-analytics-giant-swarm}}
     \item   \small{Technologies: TypeScript, React, Go}
 \end{itemize}
@@ -194,5 +320,24 @@
     \item   \small{Over 100k downloads}
     \item   \small{Technologies: Go}
 \end{itemize}
+
+\switchcolumn
+\newpage
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Coding Time %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+ \cvsection{Coding Time}
+ 
+ \small{Past Year}
+
+ \wheelchart{1.5cm}{0.5cm}{%
+   40/2em/accent!60/Go,
+   40/2em/accent!40/Python,
+   5/2em/accent!10/Jsonnet,
+   3/15em/accent!40/Terraform,
+   20/2em/accent!30/Other
+}
+
+\end{paracol}
 
 \end{document}
