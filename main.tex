@@ -1,9 +1,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% CV Jacob Colvin 2021-04 %%%%%
+%%% CV Jacob Colvin 07/2022 %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \PassOptionsToPackage{dvipsnames}{xcolor}
-\documentclass[10pt,a4paper]{altacv}
+\documentclass[10pt,a4paper,hidelinks]{altacv}
 
 %Layout
 \geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm,footskip=2\baselineskip}
@@ -28,21 +28,42 @@
 \renewcommand{\itemmarker}{{\small\textbullet}}
 \renewcommand{\ratingmarker}{\faCircle}
 
+\newcommand{\cveventinv}[4]{%
+    {\large\color{emphasis}#1\par}
+    \smallskip
+    \textbf{\color{accent}#2}\par
+    \smallskip
+    {\small\makebox[0.5\linewidth][l]{\faMapMarker\hspace{0.5em}#4}%
+    {\makebox[0.5\linewidth][l]{\faCalendar \hspace{0.5em}#3}}\par}
+    \medskip
+}
+
+\newcommand{\cvsubevent}[2]{%
+    {\small\color{emphasis}\makebox[0.5\linewidth][l]{#1}%
+    {\makebox[0.5\linewidth][l]{\color{emphasis}\faCalendar\hspace{0.5em}#2}}\par}
+    \smallskip
+}
+
+\newcommand{\cvproject}[3]{%
+    \textbf{\small\color{accent}\makebox[0.5\linewidth][l]{#1}}%
+    {\makebox[0.5\linewidth][l]{\small\color{emphasis}#3\hspace{0.5em}{#2}}}\par
+    \medskip
+}
+
 %
 
 \begin{document}
 \name{Jacob Colvin}
-\tagline{}
+\tagline{Site Reliability Engineer}
 %\photo{2.5cm}{}
 \personalinfo{
-    \email{me@jacobcolvin.com}
-    \phone{+1 937 207 1095}
-%    \mailaddress{}
     \location{Cincinnati, Ohio}
-    \linkedin{linkedin.com/in/colvinjm}
-%    \homepage{jacobcolvin.com}
-    \github{github.com/MacroPower}
-%    \stackoverflow{stackoverflow.com/users/4868262}
+    \email{me@jacobcolvin.com}
+%    \mailaddress{}
+    \linkedin{\href{https://linkedin.com/in/colvinjm}{linkedin.com/in/colvinjm}}
+    \github{\href{https://github.com/MacroPower}{github.com/MacroPower}}
+    \homepage{\href{https://jacobcolvin.com}{jacobcolvin.com}}
+%    \twitter{@0xMacro}
 }
 
 \begin{fullwidth}
@@ -53,26 +74,36 @@
 
 \cvsection[page1sidebar]{Experience}
 
-\cvevent{Versatilist Engineer / SRE}{84.51\degree}{December 2019 -- Current}{Cincinnati, Ohio}
+\cveventinv{Senior Site Reliability Engineer}{84.51\degree / Kroger}{April 2021 -- Current}{Remote / Cincinnati, Ohio}
 
 \begin{itemize}
-    \setlength{\itemindent}{0.5em}
-    \item   \small{Assist a multitude of development/data teams with observability, cloud, CI/CD, and fullfill other ad-hoc requests as needed.}
-    \item   \small{Design Go services for metric exposition.}
-    \item   \small{Develop, deploy, and maintain enterprise observability services/tooling.}
-    \item   \small{Contribute fixes to upstream OSS repos.}
+    \item   \small{Led development of multiple Go metric exposition services.}
+    \item   \small{Developed Python monitoring library for the FastAPI framework.}
+    \item   \small{Deployed and supported enterprise observability services/tooling, both on-premises and in Azure Kubernetes, including Grafana, Prometheus, Thanos, and Jaeger.}
+    \item   \small{Contributed fixes to Grafana, Thanos, and other upstream repos.}
 \end{itemize}
 
 \medskip
 
 \divider
 
-\cvevent{IT Co-op}{84.51\degree}{May 2016 -- December 2019}{Cincinnati, Ohio}
+\cveventinv{Versatilist / Site Reliability Engineer}{84.51\degree / Kroger}{December 2019 -- April 2021}{Cincinnati, Ohio}
+
+\begin{itemize}
+    \item   \small{Assisted a multitude of development/data teams with observability, cloud, CI/CD, and fulfilled other ad-hoc requests as needed.}
+    \item   \small{Enhanced our Prometheus ecosystem, by adding high-availability and long-term storage via Thanos.}
+    \item   \small{Created and administered multiple Azure environments using Terraform.}
+\end{itemize}
+
+\medskip
+
+\divider
+
+\cveventinv{IT Intern / Co-op}{84.51\degree / Kroger}{May 2016 -- December 2019}{Cincinnati, Ohio}
 
 \cvsubevent{Product Support Co-op}{April 2019 -- December 2019}
 
 \begin{itemize}
-    \setlength{\itemindent}{0.5em}
     \item   \small{Designed a C\# API layer over several legacy systems, with a TypeScript + React UI, to assist with support, data automation, and tech deprecation.}
 \end{itemize}
 
@@ -81,9 +112,7 @@
 \cvsubevent{Service Management Co-op}{Jan 2019 -- May 2019}
 
 \begin{itemize}
-    \setlength{\itemindent}{0.5em}
     \item   \small{Automated Red Hat Linux VM deployment through ServiceNow, via interactions with Satellite, vCenter, SolarWinds and Ansible.}
-    \item   \small{Designed various ServiceNow request processes.}
 \end{itemize}
 
 \medskip
@@ -91,10 +120,8 @@
 \cvsubevent{Linux and Storage Co-op}{May 2018 -- Dec 2018}
 
 \begin{itemize}
-    \setlength{\itemindent}{0.5em}
     \item   \small{Automated monitoring of eight distinct products.}
-    \item   \small{Designed custom long-term log and metric storage system.}
-    \item   \small{Designed custom PowerShell web application to view logs and metrics.}
+    \item   \small{Designed custom web application to view events and metrics.}
 \end{itemize}
 
 \medskip
@@ -102,10 +129,8 @@
 \cvsubevent{Data Operations Co-op}{Aug 2017 -- May 2018}
 
 \begin{itemize}
-    \setlength{\itemindent}{0.5em}
     \item   \small{Automated tasks using PowerShell, VBA, Bash and PL/SQL in Bash.}
     \item   \small{Created and documented Automic workflows with Bash and SAS ODS.}
-    \item   \small{Designed custom Powershell applications to assist admins and end-users.}
 \end{itemize}
 
 \medskip
@@ -113,9 +138,6 @@
 \cvsubevent{Windows and Virtualization Co-op}{Jan 2017 -- Aug 2017}
 
 \begin{itemize}
-    \setlength{\itemindent}{0.5em}
-    \item   \small{Accepted tickets from other teams and worked to promptly resolve issues.}
-    \item   \small{Created change requests and made changes to production.}
     \item   \small{Created and documented PowerShell tools to automate admin tasks.}
 \end{itemize}
 
@@ -124,25 +146,53 @@
 \cvsubevent{Platforms Co-op}{May 2016 -- Aug 2016}
 
 \begin{itemize}
-    \setlength{\itemindent}{0.5em}
     \item   \small{Interfaced with BOSH and Hadoop to design custom PCF solutions.}
     \item   \small{Designed and documented optimal setup for PCF environments.}
-    \item   \small{Conducted data restoration project and created cost-estimate reports.}
 \end{itemize}
 
-\medskip
+\newpage
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Projects %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\cvsection[page2sidebar]{Projects}
+\cvsection[page2sidebar]{Key Projects}
 
-\cvevent{OmegaGraf}{macropower.github.io/OmegaGraf}{September 2019 -- Ongoing}{University of Cincinnati}
+\cvproject{OmegaGraf}{\href{https://jacobcolvin.com/OmegaGraf}{jacobcolvin.com/OmegaGraf}}{\faChain}
 
 \begin{itemize}
-  \item \small{An ongoing open-source project that seeks to completely automate vCenter monitoring, by orchestrating a small ecosystem of containers.}
-  \item \small{Products: Telegraf, Prometheus, Grafana}
-  \item \small{Technologies: Docker, C\# / .NET Core, TypeScript, React}
+    \item   \small{An open-source project that seeks to completely automate vCenter monitoring, by orchestrating a small ecosystem of containers, including Telegraf, Prometheus, and Grafana.}
+    \item   \small{Paper: \url{https://scholar.uc.edu/concern/student\_works/jw827c971}}
+    \item   \small{Technologies: Docker, C\# / .NET Core, TypeScript, React}
 \end{itemize}
 
+\medskip\divider
+
+\cvproject{Prometheus Video Renderer}{\href{https://github.com/MacroPower/prometheus\_video\_renderer}{MacroPower/prometheus\_video\_renderer}}{\faGithub}
+
+\begin{itemize}
+    \item   \small{Just for fun, completely impractical tool that allows you to encode media as Prometheus metrics.}
+    \item   \small{Featured on the Grafana blog:\par \url{https://grafana.com/blog/2021/07/30/how-to-use-grafana-and-prometheus-to-rickroll-your-friends-or-enemies}}
+    \item   \small{Technologies: Go, Jsonnet}
+\end{itemize}
+
+\medskip\divider
+
+\cvproject{Analytics Panel Plugin}{\href{https://github.com/MacroPower/macropower-analytics-panel}{MacroPower/macropower-analytics-panel}}{\faGithub}
+
+\begin{itemize}
+    \item   \small{Grafana panel that injects JavaScript which reports user session information to a backend Go server, which exposes Prometheus metrics.}
+    \item   \small{Over 400k downloads, featured by Giant Swarm: \url{https://www.giantswarm.io/blog/grafana-ception-or-how-we-do-grafana-analytics-giant-swarm}}
+    \item   \small{Technologies: TypeScript, React, Go}
+\end{itemize}
+
+\medskip\divider
+
+\cvproject{Wakatime Exporter}{\href{https://github.com/MacroPower/wakatime\_exporter}{MacroPower/wakatime\_exporter}}{\faGithub}
+
+\begin{itemize}
+    \item   \small{Prometheus exporter and Grafana dashboards for Wakatime coding statistics.}
+    \item   \small{Over 100k downloads}
+    \item   \small{Technologies: Go}
+\end{itemize}
 
 \end{document}
