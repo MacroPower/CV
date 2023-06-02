@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% CV Jacob Colvin 07/2022 %%%%%
+%%% CV Jacob Colvin 05/2023 %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[10pt,a4paper,ragged2e,withhyper,hidelinks]{altacv}
@@ -66,7 +66,7 @@
 
 \begin{document}
 \name{Jacob Colvin}
-\tagline{Site Reliability Engineer}
+\tagline{Site Reliability \& Platform Engineer}
 %\photo{2.5cm}{}
 \personalinfo{%
   \location{Cincinnati, Ohio}
@@ -97,7 +97,7 @@
 \begin{itemize}
     \item   \small{Led development of multiple Go metric exposition services.}
     \item   \small{Developed Python monitoring library for the FastAPI framework.}
-    \item   \small{Deployed and supported enterprise observability services/tooling, both on-premises and in Azure Kubernetes, including Grafana, Prometheus, Thanos, and Jaeger.}
+    \item   \small{Deployed and supported enterprise observability services/tooling, both on-premises and in Azure Kubernetes, including Grafana, Datadog, Prometheus, Thanos, and Jaeger.}
     \item   \small{Contributed fixes to Grafana, Thanos, and other upstream repos.}
 \end{itemize}
 
@@ -209,21 +209,17 @@
 \cvtag{Python}
 \cvtag{FastAPI}
 \par
-\cvtag{C\#}
-\cvtag{JavaScript}
-\cvtag{TypeScript}
+\cvtag{TypeScript / JavaScript}
 \cvtag{React}
 \par
+\cvtag{Vue}
 \cvtag{Jsonnet}
 
 \smallskip\divider
 
 \textcolor{emphasis}{Databases:}\smallskip
 
-\cvtag{MySQL}
-\cvtag{Oracle}
 \cvtag{Postgres}
-\par
 \cvtag{Timescale}
 
 \smallskip\divider
@@ -235,38 +231,39 @@
 \cvtag{Grafana}
 \par
 \cvtag{Jaeger}
-\cvtag{Profiling - pprof}
+\cvtag{Code Profiling}
 \cvtag{Fluent}
 \par
-\cvtag{Promscale}
+\cvtag{Datadog}
 \cvtag{Telegraf}
 
 \smallskip\divider
 
 \textcolor{emphasis}{Operations:}\smallskip
 
-\cvtag{Docker}
-\cvtag{Kubernetes}
+\cvtag{Kubernetes - AKS, k3s}
+\cvtag{Helm}
+\par
 \cvtag{Azure}
+\cvtag{Docker}
+\cvtag{Crossplane}
 \par
-\cvtag{Linux - Debian, Fedora}
-\cvtag{TeamCity}
-\par
-\cvtag{Pivotal Cloud Foundry}
-\cvtag{SonarQube}
-\par
+\cvtag{FluxCD}
+\cvtag{ArgoCD}
 \cvtag{GitHub Actions}
+\par
+\cvtag{Cloud Foundry}
 \cvtag{Databricks}
 
 \smallskip\divider
 
 \textcolor{emphasis}{Automation/Scripting:}\smallskip
 
+\cvtag{Terraform}
 \cvtag{Ansible}
-\cvtag{Bash}
 \cvtag{PowerShell}
 \par
-\cvtag{Terraform}
+\cvtag{Bash}
 \cvtag{Make}
 
 \smallskip\divider
@@ -303,7 +300,7 @@
 
 \begin{itemize}
     \item   \small{Grafana panel that injects JavaScript which reports user session \par information to a backend Go server, which exposes Prometheus metrics.}
-    \item   \small{Over 400k downloads, featured by Giant Swarm: \url{https://www.giantswarm.io/blog/grafana-ception-or-how-we-do-grafana-analytics-giant-swarm}}
+    \item   \small{Over 800k downloads, featured by Giant Swarm: \url{https://www.giantswarm.io/blog/grafana-ception-or-how-we-do-grafana-analytics-giant-swarm}}
     \item   \small{Technologies: TypeScript, React, Go}
 \end{itemize}
 
@@ -315,6 +312,15 @@
     \item   \small{Prometheus exporter and Grafana dashboards for Wakatime coding statistics.}
     \item   \small{Over 100k downloads}
     \item   \small{Technologies: Go}
+\end{itemize}
+
+\medskip\divider
+
+\cvproject{Homelab}{\href{https://github.com/MacroPower/homelab}{MacroPower/homelab}}{\faGithub}
+
+\begin{itemize}
+    \item   \small{Infrastructure-as-code for my homelab / personal cloud. Defines multi-cluster k3s-on-MicroOS, spanning across bare metal and multiple \par Hetzner cloud environments.}
+    \item   \small{Technologies: k3s, Linkerd, ArgoCD, Helm, Jsonnet, Terraform}
 \end{itemize}
 
 \switchcolumn
