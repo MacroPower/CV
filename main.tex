@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% CV Jacob Colvin 05/2023 %%%%%
+%%% CV Jacob Colvin 06/2023 %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[10pt,a4paper,ragged2e,withhyper,hidelinks]{altacv}
@@ -33,8 +33,8 @@
 \colorlet{headingrule}{VividPurple}
 \colorlet{subheading}{VividPurple}
 \colorlet{accent}{VividPurple}
-\colorlet{emphasis}{SlateGrey}
-\colorlet{body}{LightGrey}
+\colorlet{emphasis}{black}
+\colorlet{body}{SlateGrey}
 
 \renewcommand{\itemmarker}{{\small\textbullet}}
 \renewcommand{\ratingmarker}{\faCircle}
@@ -45,8 +45,8 @@
   \ifstrequal{#2}{}{}{
   \textbf{\color{accent}#2}\par
   \smallskip}
-  \ifstrequal{#4}{}{}{{\small\color{emphasis}\makebox[0.5\linewidth][l]{\faMapMarker~#4}}}%
-  \ifstrequal{#3}{}{}{{\small\color{emphasis}\makebox[0.5\linewidth][l]{\faCalendar~#3}}}\par
+  \ifstrequal{#4}{}{}{{\small\color{emphasis}\makebox[0.25\linewidth][l]{\faMapMarker~#4}}}%
+  \ifstrequal{#3}{}{}{{\small\color{emphasis}\makebox[0.25\linewidth][l]{\faCalendar~#3}}}\par
   \medskip\normalsize
 }
 
@@ -81,12 +81,66 @@
 \makecvheader
 \end{fullwidth}
 
-%% Set the left/right column width ratio to 6:4.
-\columnratio{0.6}
 
-% Start a 2-column paracol. Both the left and right columns will automatically
-% break across pages if things get too long.
-\begin{paracol}{2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% About %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cvsection{About}
+
+\small{I enjoy writing software and creating platforms that make my and other developers' lives easier. I am passionate about open source software and observability, and thrive on simplifying the complexities that arrive with distributed architectures. In my free time, I am an avid homelabber, gamer, audiophile, and mechanical keyboard collector. Below are some areas of interest and expertise:}
+
+\medskip
+\smallskip
+
+%\textcolor{emphasis}{Certifications:}\smallskip
+%\cvachievement{\faTrophy}{Fantastic Achievement}{and some details about it}
+%\medskip
+%\smallskip
+
+\textcolor{emphasis}{Development:}\smallskip
+
+\cvtag{Go / Golang}
+\cvtag{Python}
+\cvtag{FastAPI}
+\cvtag{C\#}
+\cvtag{TypeScript / JavaScript}
+\cvtag{React}
+\cvtag{Vue}
+\cvtag{Jsonnet}
+\cvtag{Terraform}
+\cvtag{Ansible}
+\par
+\cvtag{pprof / Profiling}
+\cvtag{OpenTelemetry}
+\cvtag{PowerShell}
+\cvtag{Bash}
+\cvtag{Make}
+
+\medskip
+\smallskip
+
+\textcolor{emphasis}{Operations:}\smallskip
+
+\cvtag{Kubernetes - AKS, k3s}
+\cvtag{Helm}
+\cvtag{Azure}
+\cvtag{Docker}
+\cvtag{Crossplane}
+\cvtag{FluxCD}
+\cvtag{ArgoCD}
+\cvtag{GitHub Actions}
+\cvtag{Cloud Foundry}
+\cvtag{Databricks}
+\cvtag{Postgres}
+\cvtag{Prometheus}
+\cvtag{Thanos}
+\cvtag{Grafana}
+\cvtag{Jaeger}
+\cvtag{Fluentd}
+\cvtag{Telegraf}
+\cvtag{Datadog}
+
+\medskip
+\smallskip
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Experience %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -95,10 +149,11 @@
 \cveventinv{Senior Site Reliability Engineer}{84.51\degree / Kroger}{April 2021 -- Current}{Remote / Cincinnati, Ohio}
 
 \begin{itemize}
-    \item   \small{Led development of multiple Go metric exposition services.}
-    \item   \small{Developed Python monitoring library for the FastAPI framework.}
-    \item   \small{Deployed and supported enterprise observability services/tooling, both on-premises and in Azure Kubernetes, including Grafana, Datadog, Prometheus, Thanos, and Jaeger.}
-    \item   \small{Contributed fixes to Grafana, Thanos, and other upstream repos.}
+    \item   \small{Led development of multiple Prometheus exporters using Go, utilizing Redis for caching, distributed workers with pub/sub and leader election, CEL for custom rule evaluation, Cue and custom tooling for validation, and Go text templating.}
+    \item   \small{Developed Python library to centralize instrumentation for metrics (OpenMetrics), tracing (OTEL), logging, and profiling (pprof), with support for the FastAPI framework, Databricks notebooks, and more.}
+    \item   \small{Rolled out Datadog as a unified logging platform for both Azure and on-premises systems, using Terraform for configuration and Fluentd for log parsing and forwarding.}
+    \item   \small{Deployed and supported enterprise observability services/tooling, both on-premises (Ansible) and in Azure Kubernetes (Flux), \par including Grafana, Prometheus, Thanos, Fluentd, Telegraf, and Jaeger.}
+    \item   \small{Contributed small fixes to Grafana, Thanos, Jaeger, and other upstream repos.}
 \end{itemize}
 
 \medskip\divider
@@ -106,65 +161,26 @@
 \cveventinv{Versatilist / Site Reliability Engineer}{84.51\degree / Kroger}{December 2019 -- April 2021}{Cincinnati, Ohio}
 
 \begin{itemize}
+    \item   \small{Created and administered multiple Azure environments using Terraform in Azure DevOps, which included solutions such as \par Databricks, Datafactory, Key Vaults, Storage Accounts, Postgres Databases, and more.}
     \item   \small{Assisted a multitude of development/data teams with observability, cloud, CI/CD, and fulfilled other ad-hoc requests as needed.}
-    \item   \small{Enhanced our Prometheus ecosystem, by adding high-availability and long-term storage via Thanos.}
-    \item   \small{Created and administered multiple Azure environments using Terraform.}
+    \item   \small{Enhanced our Prometheus ecosystem by adding high-availability and long-term storage via Thanos, thus allowing consumers of Prometheus to track SLOs and KPIs over years instead of days.}
 \end{itemize}
 
 \divider
 
 \cveventinv{IT Intern / Co-op}{84.51\degree / Kroger}{May 2016 -- December 2019}{Cincinnati, Ohio}
 
-\cvsubevent{Product Support Co-op}{April 2019 -- December 2019}
-
 \begin{itemize}
-    \item   \small{Designed a C\# API layer over several legacy systems, and a SPA using TypeScript with React, to assist with support, data automation, and tech deprecation.}
-\end{itemize}
-
-\medskip
-
-\cvsubevent{Service Management Co-op}{Jan 2019 -- May 2019}
-
-\begin{itemize}
+    \item   \small{Designed a C\# API layer over several legacy systems, and a SPA using TypeScript with React, to assist with support, data \par automation, and tech deprecation.}
+    \item   \small{Created a C\# Prometheus exporter for SonarQube data, along with corresponding dashboards, rules and alerts, to allow security team to gather KPIs.}
     \item   \small{Automated Red Hat Linux VM deployment through ServiceNow, via interactions with Satellite, vCenter, SolarWinds and Ansible.}
-\end{itemize}
-
-\medskip
-
-\cvsubevent{Linux and Storage Co-op}{May 2018 -- Dec 2018}
-
-\begin{itemize}
-    \item   \small{Automated monitoring of eight distinct products.}
-    \item   \small{Designed custom web application to view events and metrics.}
-\end{itemize}
-
-\medskip
-
-\cvsubevent{Data Operations Co-op}{Aug 2017 -- May 2018}
-
-\begin{itemize}
-    \item   \small{Automated tasks using PowerShell, VBA, Bash and PL/SQL in Bash.}
+    \item   \small{Designed a custom web framework using PowerShell and Bootstrap for executing administrative tasks and aggregating events and metrics from many distinct products.}
     \item   \small{Created and documented Automic workflows with Bash and SAS ODS.}
+    \item   \small{Automated many miscellaneous tasks using PowerShell, VBA, Bash and PL/SQL in Bash.}
+    \item   \small{Interfaced with BOSH and Hadoop to design custom Pivotal Cloud Foundry (PCF) monitoring solution.}
 \end{itemize}
 
-\medskip
-
-\cvsubevent{Windows and Virtualization Co-op}{Jan 2017 -- Aug 2017}
-
-\begin{itemize}
-    \item   \small{Created and documented PowerShell tools to automate admin tasks.}
-\end{itemize}
-
-\medskip
-
-\cvsubevent{Platforms Co-op}{May 2016 -- Aug 2016}
-
-\begin{itemize}
-    \item   \small{Interfaced with BOSH and Hadoop to design custom PCF solutions.}
-    \item   \small{Designed and documented optimal setup for PCF environments.}
-\end{itemize}
-
-\switchcolumn
+\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Soft-skills %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -177,99 +193,14 @@
 % \cvtag{Agile}
 % \cvtag{Teamwork}
 
-\cvsection{About}
 
-\small{I am passionate about open source, and thrive most when designing solutions for difficult \par problems. I am an avid homelabber, gamer, \par audiophile, and mechanical keyboard collector.}
 
-\medskip
-\smallskip
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Education %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\cvsection{Education}
-
-\cvevent{B.S.\ Information Technology}{University of Cincinnati - CECH}{Aug 2015 -- April 2020}{}
-
-\begin{itemize}
-    \setlength{\itemindent}{0em}
-    \item   \small{Cybersecurity specialization}
-    \item   \small{Summa Cum Laude}
-\end{itemize}
-
-\medskip
-\smallskip
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Skills %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\cvsection{Skills}
-
-\textcolor{emphasis}{Development:}\smallskip
-
-\cvtag{Go / Golang}
-\cvtag{Python}
-\cvtag{FastAPI}
-\par
-\cvtag{TypeScript / JavaScript}
-\cvtag{React}
-\par
-\cvtag{Vue}
-\cvtag{Jsonnet}
-
-\smallskip\divider
-
-\textcolor{emphasis}{Databases:}\smallskip
-
-\cvtag{Postgres}
-\cvtag{Timescale}
-
-\smallskip\divider
-
-\textcolor{emphasis}{Observability:}\smallskip
-
-\cvtag{Prometheus}
-\cvtag{Thanos}
-\cvtag{Grafana}
-\par
-\cvtag{Jaeger}
-\cvtag{Code Profiling}
-\cvtag{Fluent}
-\par
-\cvtag{Datadog}
-\cvtag{Telegraf}
-
-\smallskip\divider
-
-\textcolor{emphasis}{Operations:}\smallskip
-
-\cvtag{Kubernetes - AKS, k3s}
-\cvtag{Helm}
-\par
-\cvtag{Azure}
-\cvtag{Docker}
-\cvtag{Crossplane}
-\par
-\cvtag{FluxCD}
-\cvtag{ArgoCD}
-\cvtag{GitHub Actions}
-\par
-\cvtag{Cloud Foundry}
-\cvtag{Databricks}
-
-\smallskip\divider
-
-\textcolor{emphasis}{Automation/Scripting:}\smallskip
-
-\cvtag{Terraform}
-\cvtag{Ansible}
-\cvtag{PowerShell}
-\par
-\cvtag{Bash}
-\cvtag{Make}
-
-\smallskip\divider
-
-\switchcolumn
-\newpage
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Projects %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -282,6 +213,15 @@
     \item   \small{An open-source project that seeks to completely automate vCenter monitoring, by orchestrating a small ecosystem of containers, including Telegraf, Prometheus, and Grafana.}
     \item   \small{Paper: \url{https://scholar.uc.edu/concern/student\_works/jw827c971}}
     \item   \small{Technologies: Docker, C\# / .NET Core, TypeScript, React}
+\end{itemize}
+
+\medskip\divider
+
+\cvproject{Homelab}{\href{https://github.com/MacroPower/homelab}{MacroPower/homelab}}{\faGithub}
+
+\begin{itemize}
+    \item   \small{Infrastructure-as-code for my homelab / personal cloud. Defines multi-cluster k3s-on-MicroOS, spanning across bare metal and multiple \par Hetzner cloud environments.}
+    \item   \small{Technologies: k3s, Linkerd, ArgoCD, Helm, Jsonnet, Terraform}
 \end{itemize}
 
 \medskip\divider
@@ -314,19 +254,24 @@
     \item   \small{Technologies: Go}
 \end{itemize}
 
-\medskip\divider
+\switchcolumn
 
-\cvproject{Homelab}{\href{https://github.com/MacroPower/homelab}{MacroPower/homelab}}{\faGithub}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Education %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cvsection{Education}
+
+\cvevent{B.S.\ Information Technology}{University of Cincinnati - CECH}{Aug 2015 -- April 2020}{}
 
 \begin{itemize}
-    \item   \small{Infrastructure-as-code for my homelab / personal cloud. Defines multi-cluster k3s-on-MicroOS, spanning across bare metal and multiple \par Hetzner cloud environments.}
-    \item   \small{Technologies: k3s, Linkerd, ArgoCD, Helm, Jsonnet, Terraform}
+    \setlength{\itemindent}{0em}
+    \item   \small{Cybersecurity specialization}
+    \item   \small{Summa Cum Laude}
 \end{itemize}
 
-\switchcolumn
-\newpage
+\medskip
+\smallskip
 
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Coding Time %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Coding Time %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  \cvsection{Coding Time}
  
