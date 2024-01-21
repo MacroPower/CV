@@ -1,15 +1,19 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% CV Jacob Colvin 06/2023 %%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% CV - Jacob Colvin %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[10pt,a4paper,ragged2e,withhyper,hidelinks]{altacv}
 
 %Layout
-\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+\geometry{left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm,paperheight=52cm}
 
 %Packages
 \usepackage{paracol}
 \usepackage{gensymb}
+
+% Remove automatic hyphenation
+\usepackage[none]{hyphenat}
+\let\raggedright\relax
 
 % Change the font if you want to, depending on whether
 % you're using pdflatex or xelatex/lualatex
@@ -57,7 +61,7 @@
 }
 
 \newcommand{\cvproject}[3]{%
-    \textbf{\small\color{accent}\makebox[0.5\linewidth][l]{#1}}%
+    \textbf{\small\color{accent}\makebox[0.25\linewidth][l]{#1}}%
     {\makebox[0.5\linewidth][l]{\small\color{emphasis}#3\hspace{0.5em}{#2}}}\par
     \medskip
 }
@@ -66,7 +70,7 @@
 
 \begin{document}
 \name{Jacob Colvin}
-\tagline{Site Reliability \& Platform Engineer}
+\tagline{Platform, Site Reliability, and Software Engineer}
 %\photo{2.5cm}{}
 \personalinfo{%
   \location{Cincinnati, Ohio}
@@ -82,119 +86,6 @@
 \end{fullwidth}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% About %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\cvsection{About}
-
-\small{I enjoy writing software and creating platforms that make my and other developers' lives easier. I am passionate about open source software and observability, and thrive on simplifying the complexities that arrive with distributed architectures. In my free time, I am an avid homelabber, gamer, audiophile, and mechanical keyboard collector. Below are some areas of interest and expertise:}
-
-\medskip
-\smallskip
-
-%\textcolor{emphasis}{Certifications:}\smallskip
-%\cvachievement{\faTrophy}{Fantastic Achievement}{and some details about it}
-%\medskip
-%\smallskip
-
-\textcolor{emphasis}{Development:}\smallskip
-
-\cvtag{Go / Golang}
-\cvtag{Python}
-\cvtag{FastAPI}
-\cvtag{C\#}
-\cvtag{TypeScript / JavaScript}
-\cvtag{React}
-\cvtag{Vue}
-\cvtag{Jsonnet}
-\cvtag{Terraform}
-\cvtag{Ansible}
-\par
-\cvtag{pprof / Profiling}
-\cvtag{OpenTelemetry}
-\cvtag{PowerShell}
-\cvtag{Bash}
-\cvtag{Make}
-
-\medskip
-\smallskip
-
-\textcolor{emphasis}{Operations:}\smallskip
-
-\cvtag{Kubernetes - AKS, k3s}
-\cvtag{Helm}
-\cvtag{Azure}
-\cvtag{Docker}
-\cvtag{Crossplane}
-\cvtag{FluxCD}
-\cvtag{ArgoCD}
-\cvtag{GitHub Actions}
-\cvtag{Cloud Foundry}
-\cvtag{Databricks}
-\cvtag{Postgres}
-\cvtag{Prometheus}
-\cvtag{Thanos}
-\cvtag{Grafana}
-\cvtag{Jaeger}
-\cvtag{Fluentd}
-\cvtag{Telegraf}
-\cvtag{Datadog}
-
-\medskip
-\smallskip
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Experience %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\cvsection{Experience}
-
-\cveventinv{Senior Site Reliability Engineer}{84.51\degree / Kroger}{April 2021 -- Current}{Remote / Cincinnati, Ohio}
-
-\begin{itemize}
-    \item   \small{Led development of multiple Prometheus exporters using Go, utilizing Redis for caching, distributed workers with pub/sub and leader election, CEL for custom rule evaluation, Cue and custom tooling for validation, and Go text templating.}
-    \item   \small{Developed Python library to centralize instrumentation for metrics (OpenMetrics), tracing (OTEL), logging, and profiling (pprof), with support for the FastAPI framework, Databricks notebooks, and more.}
-    \item   \small{Rolled out Datadog as a unified logging platform for both Azure and on-premises systems, using Terraform for configuration and Fluentd for log parsing and forwarding.}
-    \item   \small{Deployed and supported enterprise observability services/tooling, both on-premises (Ansible) and in Azure Kubernetes (Flux), \par including Grafana, Prometheus, Thanos, Fluentd, Telegraf, and Jaeger.}
-    \item   \small{Contributed small fixes to Grafana, Thanos, Jaeger, and other upstream repos.}
-\end{itemize}
-
-\medskip\divider
-
-\cveventinv{Versatilist / Site Reliability Engineer}{84.51\degree / Kroger}{December 2019 -- April 2021}{Cincinnati, Ohio}
-
-\begin{itemize}
-    \item   \small{Created and administered multiple Azure environments using Terraform in Azure DevOps, which included solutions such as \par Databricks, Datafactory, Key Vaults, Storage Accounts, Postgres Databases, and more.}
-    \item   \small{Assisted a multitude of development/data teams with observability, cloud, CI/CD, and fulfilled other ad-hoc requests as needed.}
-    \item   \small{Enhanced our Prometheus ecosystem by adding high-availability and long-term storage via Thanos, thus allowing consumers of Prometheus to track SLOs and KPIs over years instead of days.}
-\end{itemize}
-
-\divider
-
-\cveventinv{IT Intern / Co-op}{84.51\degree / Kroger}{May 2016 -- December 2019}{Cincinnati, Ohio}
-
-\begin{itemize}
-    \item   \small{Designed a C\# API layer over several legacy systems, and a SPA using TypeScript with React, to assist with support, data \par automation, and tech deprecation.}
-    \item   \small{Created a C\# Prometheus exporter for SonarQube data, along with corresponding dashboards, rules and alerts, to allow security team to gather KPIs.}
-    \item   \small{Automated Red Hat Linux VM deployment through ServiceNow, via interactions with Satellite, vCenter, SolarWinds and Ansible.}
-    \item   \small{Designed a custom web framework using PowerShell and Bootstrap for executing administrative tasks and aggregating events and metrics from many distinct products.}
-    \item   \small{Created and documented Automic workflows with Bash and SAS ODS.}
-    \item   \small{Automated many miscellaneous tasks using PowerShell, VBA, Bash and PL/SQL in Bash.}
-    \item   \small{Interfaced with BOSH and Hadoop to design custom Pivotal Cloud Foundry (PCF) monitoring solution.}
-\end{itemize}
-
-\newpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Soft-skills %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \cvsection{Soft-skills}
-
-% \cvtag{Flexibility}
-% \cvtag{Responsibility}
-% \cvtag{Multitasking}
-% \cvtag{Context switching}
-% \cvtag{Agile}
-% \cvtag{Teamwork}
-
-
-
 %% Set the left/right column width ratio to 6:4.
 \columnratio{0.6}
 
@@ -202,6 +93,89 @@
 % break across pages if things get too long.
 \begin{paracol}{2}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% About %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cvsection{About}
+
+\small{With over seven years of experience in the tech industry, my expertise lies in Site Reliability Engineering, enriched by a deep focus in Software and Platform Engineering. My passion lies in building robust developer platforms, crafting maintainable infrastructure as code, and architecting systems in a way that is simple and straightforward. My experience as a developer, with a focus on Go and Python, enables my ability to create platforms that are not only reliable, but also enjoyable to use.}
+
+%\textcolor{emphasis}{Certifications:}\smallskip
+%\cvachievement{\faTrophy}{Fantastic Achievement}{and some details about it}
+
+\switchcolumn
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Education %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cvsection{Education}
+
+\cvevent{B.S.\ Information Technology}{University of Cincinnati - CECH}{Aug 2015 -- April 2020}{}
+
+\begin{itemize}
+    \setlength{\itemindent}{0em}
+    \item   \small{Cybersecurity specialization}
+    \item   \small{Summa Cum Laude}
+\end{itemize}
+
+\end{paracol}
+
+\medskip\medskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Experience %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cvsection{Experience}
+
+\cveventinv{Senior Site Reliability Engineer (Kubernetes)}{84.51\degree / Kroger}{January 2023 -- Current}{Remote / Cincinnati, Ohio}
+
+\begin{itemize}
+    %\item   \small{Led complete rearchitecture of \textbf{Kubernetes (AKS)}, including a near total rewrite of our \textbf{IaC (Terraform, Flux)}, to support increased scaling and security demands of new production workloads (driving \$100MM+ revenue).}
+    \item   \small{Redesigned large parts of our \textbf{IaC (Terraform, Flux)} for \textbf{Kubernetes (AKS)}, reducing manual toil by 200+ hours per year, to support increased scaling demands of new production workloads (driving \$300MM+ operating profit).}
+    \item   \small{Developed \textbf{Python} application for scaffolding template repositories, which acted as a central component in project initialization, and collectively saved developers 3000+ hours during the first year in production.}
+    \item   \small{Led \textbf{Datadog} cost-saving efforts which reduced spend by over \$400k per year; enforced controls using \textbf{Terraform}.}
+    \item   \small{Assisted with development of centralized \textbf{Helm charts} for developers; wrote \textbf{GitHub Actions} for chart testing and validation.}
+    \item   \small{Participated in an \textbf{on-call rotation} for our production \textbf{Kubernetes} clusters.}
+    \item   \small{Acted as primary subject-matter expert for observability; continued support and maintenance of all observability tooling, including \textbf{Datadog}, \textbf{Grafana}, \textbf{Prometheus}, \textbf{Thanos}, \textbf{Jaeger}, \textbf{OpenTelemetry Collectors}, and \textbf{Vector}.}
+\end{itemize}
+
+\medskip\divider
+
+\cveventinv{Senior Site Reliability Engineer (Observability)}{84.51\degree / Kroger}{April 2021 -- December 2022}{Remote / Cincinnati, Ohio}
+
+\begin{itemize}
+    \item   \small{Led development of multiple \textbf{Prometheus exporters} using \textbf{Go}, utilizing \textbf{Redis} for caching, distributed workers with pub/sub and leader election, \textbf{CEL} for custom rule evaluation, \textbf{Cue} and custom tooling for validation, and Go text templating.}
+    \item   \small{Developed \textbf{Python} library to centralize instrumentation for \textbf{Prometheus} metrics, \textbf{OpenTelemetry} tracing, structured logging, and \textbf{pprof} profiling, with support for the \textbf{FastAPI} framework, \textbf{Databricks} notebooks, and more.}
+    \item   \small{Rolled out \textbf{Datadog} as a unified logging platform for both \textbf{Azure} and on-premises systems, using \textbf{Terraform} for configuration and \textbf{Fluentd} for log parsing and forwarding.}
+    \item   \small{Deployed and supported enterprise observability services/tooling, utilizing \textbf{Ansible} (on-premises) and \textbf{Flux} (Azure Kubernetes), \par including \textbf{Grafana}, \textbf{Prometheus}, \textbf{Thanos}, \textbf{Fluentd}, \textbf{Telegraf}, and \textbf{Jaeger}.}
+    \item   \small{Created multiple \textbf{Jsonnet} libraries for \textbf{Prometheus} and \textbf{Alertmanager} configuration.}
+    \item   \small{Contributed small fixes to \textbf{Grafana}, \textbf{Thanos}, \textbf{Jaeger}, and other upstream \textbf{Git} repositories.}
+\end{itemize}
+
+\medskip\divider
+
+\cveventinv{Versatilist Engineer}{84.51\degree / Kroger}{January 2020 -- March 2021}{Cincinnati, Ohio}
+
+\begin{itemize}
+    \item   \small{Created and administered multiple \textbf{Azure} environments using \textbf{Terraform} in Azure DevOps; said environments frequently included resources such as \textbf{Databricks} workspaces, \textbf{Datafactory} instances, \textbf{Key Vaults}, \textbf{Storage Accounts}, and \textbf{Postgres} databases.}
+    \item   \small{Enhanced our \textbf{Prometheus} ecosystem by adding high-availability and long-term storage via \textbf{Thanos}, thus allowing consumers of Prometheus to track SLOs and KPIs over years instead of days.}
+    \item   \small{Assisted a multitude of development and data science teams with \textbf{Azure} migration, \textbf{Terraform}, \textbf{Grafana} dashboards, \textbf{Prometheus} alerts, \textbf{GitHub Actions}, and \textbf{Azure DevOps} pipelines.}
+    \item   \small{Acted as primary liason between multiple development/data-science teams, and a multitude of infrastructure teams, in order to increase speed and accessibility of support.}
+\end{itemize}
+
+\medskip\divider
+
+\cveventinv{ICT Co-op}{84.51\degree / Kroger}{May 2016 -- December 2019}{Cincinnati, Ohio}
+
+\begin{itemize}
+    \item   \small{Designed a \textbf{C\#} API layer over several legacy systems, and a SPA using \textbf{TypeScript} with \textbf{React}, to assist with support, data \par automation, and tech deprecation.}
+    \item   \small{Created a \textbf{Prometheus exporter} for \textbf{SonarQube} data, along with corresponding dashboards, rules and alerts, to allow security team to gather KPIs.}
+    \item   \small{Automated \textbf{Red Hat Linux} VM deployment through \textbf{ServiceNow}, via interactions with \textbf{Satellite}, \textbf{vCenter}, \textbf{SolarWinds} and \textbf{Ansible}.}
+    \item   \small{Designed a custom web framework using \textbf{PowerShell} and \textbf{Bootstrap} for executing administrative tasks and aggregating events and metrics from many distinct products.}
+    \item   \small{Created and documented \textbf{Automic} workflows with \textbf{Bash} and \textbf{SAS ODS}.}
+    \item   \small{Automated many miscellaneous tasks using \textbf{PowerShell}, \textbf{VBA}, \textbf{Bash} and \textbf{PL/SQL} in Bash.}
+    \item   \small{Interfaced with \textbf{BOSH} and \textbf{Hadoop} to design custom \textbf{Pivotal Cloud Foundry} monitoring solution.}
+\end{itemize}
+
+\medskip\medskip\medskip
+%\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Projects %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -220,8 +194,8 @@
 \cvproject{Homelab}{\href{https://github.com/MacroPower/homelab}{MacroPower/homelab}}{\faGithub}
 
 \begin{itemize}
-    \item   \small{Infrastructure-as-code for my homelab / personal cloud. Defines multi-cluster k3s-on-MicroOS, spanning across bare metal and multiple \par Hetzner cloud environments.}
-    \item   \small{Technologies: k3s, Linkerd, ArgoCD, Helm, Jsonnet, Terraform}
+    \item   \small{Infrastructure-as-code for my homelab / personal cloud. Defines multiple interconnected Kubernetes clusters, spanning across bare metal (Talos) and multiple Hetzner cloud environments (k3s-on-MicroOS).}
+    \item   \small{Technologies: Talos, Cilium, ArgoCD, Helm, Jsonnet, Terraform}
 \end{itemize}
 
 \medskip\divider
@@ -229,8 +203,8 @@
 \cvproject{Prometheus Video Renderer}{\href{https://github.com/MacroPower/prometheus\_video\_renderer}{MacroPower/prometheus\_video\_renderer}}{\faGithub}
 
 \begin{itemize}
-    \item   \small{Just for fun, completely impractical tool that allows you to encode \par media as Prometheus metrics.}
-    \item   \small{Featured on the Grafana blog: \url{https://grafana.com/blog/2021/07/30/how-to-use-grafana-and-prometheus-to-rickroll-your-friends-or-enemies}}
+    \item   \small{Just for fun, completely impractical tool that allows you to encode audio and video as Prometheus metrics.}
+    \item   \small{Featured on the Grafana blog: \par \url{https://grafana.com/blog/2021/07/30/how-to-use-grafana-and-prometheus-to-rickroll-your-friends-or-enemies}}
     \item   \small{Technologies: Go, Jsonnet}
 \end{itemize}
 
@@ -239,8 +213,8 @@
 \cvproject{Analytics Panel Plugin}{\href{https://github.com/MacroPower/macropower-analytics-panel}{MacroPower/macropower-analytics-panel}}{\faGithub}
 
 \begin{itemize}
-    \item   \small{Grafana panel that injects JavaScript which reports user session \par information to a backend Go server, which exposes Prometheus metrics.}
-    \item   \small{Over 800k downloads, featured by Giant Swarm: \url{https://www.giantswarm.io/blog/grafana-ception-or-how-we-do-grafana-analytics-giant-swarm}}
+    \item   \small{Grafana panel plugin that injects JavaScript into dashboards, which reports user session information to a backend Go server, which in turn exports Prometheus metrics for display in (you guessed it) Grafana.}
+    \item   \small{Over 1MM downloads, featured by Giant Swarm: \par \url{https://www.giantswarm.io/blog/grafana-ception-or-how-we-do-grafana-analytics-giant-swarm}}
     \item   \small{Technologies: TypeScript, React, Go}
 \end{itemize}
 
@@ -253,38 +227,5 @@
     \item   \small{Over 100k downloads}
     \item   \small{Technologies: Go}
 \end{itemize}
-
-\switchcolumn
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Education %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\cvsection{Education}
-
-\cvevent{B.S.\ Information Technology}{University of Cincinnati - CECH}{Aug 2015 -- April 2020}{}
-
-\begin{itemize}
-    \setlength{\itemindent}{0em}
-    \item   \small{Cybersecurity specialization}
-    \item   \small{Summa Cum Laude}
-\end{itemize}
-
-\medskip
-\smallskip
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Coding Time %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
- \cvsection{Coding Time}
- 
- \small{Past Year}
-
- \wheelchart{1.5cm}{0.5cm}{%
-   40/2em/accent!60/Go,
-   40/2em/accent!40/Python,
-   5/2em/accent!10/Jsonnet,
-   3/15em/accent!40/Terraform,
-   20/2em/accent!30/Other
-}
-
-\end{paracol}
 
 \end{document}
